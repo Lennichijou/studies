@@ -1,2 +1,2 @@
 # studies
-Just some uni related stuff. Ignore it.
+Just some university-related stuff. You can ignore it or not, I don't mind.
