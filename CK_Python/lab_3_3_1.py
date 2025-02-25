@@ -1,16 +1,21 @@
-def F(n: int) -> int:
+from functools import cache
+
+
+@cache
+def F(n):
     if n == 0:
         return 1
     return n - M(F(n - 1))
 
 
-def M(n: int) -> int:
+@cache
+def M(n):
     if n == 0:
         return 0
     return n - F(M(n - 1))
 
 
-def hofstadter_f_m(n: int) -> tuple:
+def hofstadter_f_m(n):
     return F(n), M(n)
 
 
@@ -21,8 +26,8 @@ while True:
         print("Повторите ввод.")
     else:
         endstr = ", "
-        for i in range(n):
-            if i == n-1:
+        for i in range(n + 1):
+            if i == n:
                 endstr = ""
             print(hofstadter_f_m(i), end=endstr)
         break

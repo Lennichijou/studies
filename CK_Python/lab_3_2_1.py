@@ -1,4 +1,4 @@
-def reducer(m: int, n: int) -> tuple:
+def reducer(m, n):
     k = n
     while k != 1:
         if m % k == 0 and n % k == 0:
@@ -14,8 +14,8 @@ while True:
     except ValueError:
         print("Повторите ввод.")
     else:
-        if m > n or m <= 0 or n <= 0:
-            print("Повторите ввод.")
+        if m > n:
+            print("Ошибка: M > N!")
         else:
             print(reducer(m, n))
             break
